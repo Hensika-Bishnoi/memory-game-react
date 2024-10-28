@@ -1,38 +1,190 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+body {
+  background-color: rgb(222, 172, 218);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.start-page, .game-won-page, .game-over-page {
+  background-color: #fff;
+  font-family: "Satisfy", cursive;
+  font-weight: 400;
+  font-size: 60px;
+  margin-top: 70px;
+  width: 680px;
+  height: 300px;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.168);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.start-page h1 {
+  color: rgb(114, 48, 114);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.game-won-page h1 {
+  color: rgb(12, 142, 49);
+}
+
+.game-over-page h1 {
+  color: rgb(202, 8, 8);
+}
+
+.game-won-page p, .game-over-page p {
+  font-size: 36px;
+  margin: 20px 0;
+  font-family: "Kaushan Script";
+  font-weight: 500;
+}
+
+.start-btn, .go-to-home {
+  color: black;
+  background-color: #fff;
+  font-family: "Kaushan Script", cursive;
+  font-weight: 500;
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 3px;
+  line-height: 28px;
+  margin: 16px 0;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Satisfy", cursive;
+  font-weight: 400;
+  font-size: 60px;
+  margin: 12px auto 10px auto;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 950px;
+  height: 530px;
+  background-color: #fff;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.168);
+}
+
+.main {
+  height: 500px;
+  width: 100%;
+  max-width: 920px; 
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  height: 75px;
+  width: 105px;
+  border: none;
+  background-color: rgb(138, 192, 210);
+  margin: 12px 20px;
+  padding: 0;
+  line-height: 60px;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.168);
+  font-family: "Satisfy";
+  font-weight: 400;
+  font-size: 36px;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.card.flipped {
+  background-color: white;
+  border: 1px solid #ccc;
+  line-height: 60px;
+  transform: rotateY(180deg);
+  height: 75px;
+  width: 105px;
+  margin: 12px 20px;
+  padding: 0;
+  font-family: "Satisfy";
+  font-weight: 400;
+  font-size: 36px;
+  color: black;
+}
+
+.card.matched {
+  border: 2px solid rgb(106, 216, 47);
+  box-shadow: 0 3px 10px rgba(114, 235, 49, 0.729);
+}
+
+.reset-btn {
+  color: black;
+  background-color: #fff;
+  font-family: "Kaushan Script", cursive;
+  font-weight: 500;
+  font-size: 18px;
+  border: none;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  text-decoration: underline;
+}
+
+.top-line {
+  margin: 0;
+  margin-left: 15px;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+
+@keyframes messageJump {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+.score {
+  color: black;
+  font-family: "Kaushan Script", cursive;
+  font-weight: 500;
+  font-size: 26px;
+  width: 15%;
+}
+
+.message {
+  color: rgb(15, 165, 58);
+  font-family: "Kaushan Script", cursive;
+  font-weight: 500;
+  font-size: 28px;
+  text-align: center;
+  letter-spacing: 2px;
+  width: 70%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.message.jump {
+  animation: messageJump 0.5s ease-in-out;
+}
+
+.timer {
+  font-family: "Kaushan Script", cursive;
+  font-weight: 500;
+  font-size: 22px;
+  text-align: center;
+  width: 15%;
 }
